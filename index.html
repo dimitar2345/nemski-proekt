@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кой иска да бъде милионер?</title>
+    <style>
+        body {
+            background: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #game {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #222;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #0008;
+            padding: 32px 24px 24px 24px;
+            min-height: 400px;
+        }
+        .prize-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        .prize {
+            background: #333;
+            color: #FFD700;
+            border-radius: 6px;
+            margin: 2px;
+            padding: 4px 10px;
+            font-size: 13px;
+        }
+        .prize.active {
+            background: #FFD700;
+            color: #222;
+            font-weight: bold;
+        }
+        .prize.done {
+            background: #444;
+            color: #888;
+        }
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 18px;
+            color: #FFD700;
+        }
+        .answers {
+            margin-bottom: 18px;
+        }
+        .answer-btn {
+            width: 100%;
+            margin: 6px 0;
+            padding: 12px;
+            font-size: 1em;
+            background: #2a5a8a;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .answer-btn:hover:not(:disabled) {
+            background: #3a7aba;
+        }
+        .answer-btn.correct {
+            background: #2a8a2a !important;
+        }
+        .answer-btn.wrong {
+            background: #8a2a2a !important;
+        }
+        .answer-btn.disabled {
+            background: #555 !important;
+            color: #aaa;
+            cursor: not-allowed;
+        }
+        .jokers {
+            margin-bottom: 18px;
+        }
+        .jokers button {
+            margin: 0 6px 6px 0;
+            padding: 8px 16px;
+            background: #2a5a2a;
+            color: #FFD700;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .jokers button:disabled {
+            background: #444;
+            color: #888;
+            cursor: not-allowed;
+        }
+        .status {
+            text-align: right;
+            color: #FFD700;
+            font-size: 1.1em;
+        }
+        .joker-modal {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .joker-modal-content {
+            background: #222;
+            color: #FFD700;
+            padding: 32px 24px;
+            border-radius: 12px;
+            min-width: 260px;
+            text-align: center;
+            box-shadow: 0 0 20px #000a;
+        }
+        .joker-modal-content button {
+            margin-top: 18px;
+            padding: 8px 24px;
+            background: #FFD700;
+            color: #222;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <h1>Зареждане...</h1>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
