@@ -234,7 +234,7 @@ class MillionaireGame:
                 self.answer_buttons[letter].config(bg="#8a2a2a")
         
         if answer == correct_letter:
-            messagebox.showinfo("Верно!", f"Верния отговор е {correct_letter}!\nНаградa: {self.prizes[self.current_question]} евро")
+            messagebox.showinfo("Вярно!", f"Верния отговор е {correct_letter}!\nНаградa: {self.prizes[self.current_question]} евро")
             self.current_question += 1
             self.show_question()
         else:
