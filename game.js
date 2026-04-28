@@ -11,9 +11,32 @@ async function loadQuestions() {
     // Зарежда въпросите от questions.json (ако е на същия сървър)
     try {
         const res = await fetch('questions.json');
-        questions = await res.json();
-        shuffle(questions);
-        questions = questions.slice(0, 15);
+        let allQuestions = await res.json();
+        // Филтрирай по трудност
+        let easy = allQuestions.filter(q => q.difficulty === "лесно");
+        let medium = allQuestions.filter(q => q.difficulty === "средно");
+        let hard = allQuestions.filter(q => q.difficulty === "трудно");
+
+        // Разбъркай всяка група
+        shuffle(easy);
+        shuffle(medium);
+        shuffle(hard);
+
+        // Вземи по 5 от всяка група (ако има)
+        let selected = [];
+        selected = selected.concat(easy.slice(0, 5));
+        selected = selected.concat(medium.slice(0, 5));
+        selected = selected.concat(hard.slice(0, 5));
+
+        // Ако някоя група има по-малко от 5 въпроса, попълни с други въпроси без повторения
+        if (selected.length < 15) {
+            let used = new Set(selected.map(q => q.question));
+            let rest = allQuestions.filter(q => !used.has(q.question));
+            shuffle(rest);
+            selected = selected.concat(rest.slice(0, 15 - selected.length));
+        }
+
+        questions = selected;
         showQuestion();
     } catch (e) {
         document.getElementById('game').innerHTML = '<b style="color:red">Грешка при зареждане на въпросите!</b>';
