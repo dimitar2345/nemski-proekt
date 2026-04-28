@@ -1,33 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кой иска да бъде милионер?</title>
+    <title>Wer wird millionär musik?</title>
+    <link rel="icon" href="Images/fivecon.png" type="image/x-icon">
     <style>
         body {
-            background: #1a1a1a;
+            background-image: url("Images/background.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #fff;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
+
         #game {
             max-width: 600px;
+            background-color: rgba(34, 34, 34, 0.96);
             margin: 40px auto;
-            background: #222;
+            /*background: #222;*/
             border-radius: 12px;
             box-shadow: 0 0 20px #0008;
             padding: 32px 24px 24px 24px;
             min-height: 400px;
         }
+
         .prize-bar {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin-bottom: 18px;
         }
+
         .prize {
             background: #333;
             color: #FFD700;
@@ -36,23 +45,28 @@
             padding: 4px 10px;
             font-size: 13px;
         }
+
         .prize.active {
             background: #FFD700;
             color: #222;
             font-weight: bold;
         }
+
         .prize.done {
             background: #444;
             color: #888;
         }
+
         .question {
             font-size: 1.2em;
             margin-bottom: 18px;
             color: #FFD700;
         }
+
         .answers {
             margin-bottom: 18px;
         }
+
         .answer-btn {
             width: 100%;
             margin: 6px 0;
@@ -65,23 +79,29 @@
             cursor: pointer;
             transition: background 0.2s;
         }
+
         .answer-btn:hover:not(:disabled) {
             background: #3a7aba;
         }
+
         .answer-btn.correct {
             background: #2a8a2a !important;
         }
+
         .answer-btn.wrong {
             background: #8a2a2a !important;
         }
+
         .answer-btn.disabled {
             background: #555 !important;
             color: #aaa;
             cursor: not-allowed;
         }
+
         .jokers {
             margin-bottom: 18px;
         }
+
         .jokers button {
             margin: 0 6px 6px 0;
             padding: 8px 16px;
@@ -93,25 +113,32 @@
             cursor: pointer;
             transition: background 0.2s;
         }
+
         .jokers button:disabled {
             background: #444;
             color: #888;
             cursor: not-allowed;
         }
+
         .status {
             text-align: right;
             color: #FFD700;
             font-size: 1.1em;
         }
+
         .joker-modal {
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.7);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
         }
+
         .joker-modal-content {
             background: #222;
             color: #FFD700;
@@ -121,6 +148,7 @@
             text-align: center;
             box-shadow: 0 0 20px #000a;
         }
+
         .joker-modal-content button {
             margin-top: 18px;
             padding: 8px 24px;
@@ -131,7 +159,8 @@
             font-size: 1em;
             cursor: pointer;
         }
-                .retry-btn {
+
+        .retry-btn {
             margin-top: 18px;
             padding: 10px 28px;
             background: #FFD700;
@@ -144,50 +173,59 @@
             box-shadow: 0 2px 8px #0004;
             transition: background 0.2s;
         }
+
         .retry-btn:hover {
             background: #ffe066;
         }
-    .audience-chart {
-        margin-top: 18px;
-        margin-bottom: 8px;
-    }
-    .audience-row {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-    }
-    .audience-label {
-        width: 24px;
-        font-weight: bold;
-        color: #FFD700;
-        text-align: right;
-        margin-right: 8px;
-    }
-    .audience-bar-bg {
-        background: #444;
-        border-radius: 6px;
-        flex: 1;
-        height: 22px;
-        margin-right: 8px;
-        overflow: hidden;
-    }
-    .audience-bar {
-        height: 100%;
-        border-radius: 6px 0 0 6px;
-        transition: width 0.5s;
-    }
-    .audience-percent {
-        width: 38px;
-        color: #FFD700;
-        font-weight: bold;
-        text-align: left;
-    }
+
+        .audience-chart {
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        .audience-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .audience-label {
+            width: 24px;
+            font-weight: bold;
+            color: #FFD700;
+            text-align: right;
+            margin-right: 8px;
+        }
+
+        .audience-bar-bg {
+            background: #444;
+            border-radius: 6px;
+            flex: 1;
+            height: 22px;
+            margin-right: 8px;
+            overflow: hidden;
+        }
+
+        .audience-bar {
+            height: 100%;
+            border-radius: 6px 0 0 6px;
+            transition: width 0.5s;
+        }
+
+        .audience-percent {
+            width: 38px;
+            color: #FFD700;
+            font-weight: bold;
+            text-align: left;
+        }
     </style>
 </head>
+
 <body>
     <div id="game">
         <h1>Зареждане...</h1>
     </div>
     <script src="game.js"></script>
 </body>
+
 </html>
