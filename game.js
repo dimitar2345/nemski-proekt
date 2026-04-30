@@ -6,6 +6,33 @@ let currentQuestion = 0;
 let usedJokers = { fifty: false, pub1: false, pub2: false };
 let answerOrder = [];
 let disabledAnswers = [];
+let isAnswering = false;
+
+// Audio assets
+const bgMain = new Audio('Music/maintheme_whowantstobeamillionaire.mp3');
+bgMain.loop = false; // play only once at startup
+const bgLetsPlay = new Audio('Music/letsplay_whowantstobeamillionaire.mp3');
+bgLetsPlay.loop = true;
+const sndCorrect = new Audio('Music/correctanswer_whowantstobeamillionaire.mp3');
+const sndWrong = new Audio('Music/wronganswer_whowantstobeamillionaire.mp3');
+
+function stopAllBackground() {
+    try { bgMain.pause(); bgMain.currentTime = 0; } catch(e){}
+    try { bgLetsPlay.pause(); bgLetsPlay.currentTime = 0; } catch(e){}
+}
+
+let introPlayed = false;
+
+function playIntroThenLoop() {
+    try {
+        stopAllBackground();
+        bgMain.play().catch(()=>{});
+        bgMain.onended = ()=>{
+            introPlayed = true;
+            try { bgLetsPlay.play().catch(()=>{}); } catch(e){}
+        };
+    } catch(e){}
+}
 
 async function loadQuestions() {
     // Зарежда въпросите от questions.json (ако е на същия сървър)
@@ -80,10 +107,16 @@ function showQuestion() {
     </div>`;
     html += `<div class='status'>Награда: <b>${prizes[currentQuestion]} евро</b></div>`;
     document.getElementById('game').innerHTML = html;
+    // Ensure letsplay background runs after intro has played
+    if (introPlayed) {
+        try { bgLetsPlay.play().catch(()=>{}); } catch(e){}
+    }
 }
 
 function chooseAnswer(letter) {
+    if (isAnswering) return;
     if (disabledAnswers.includes(letter)) return;
+    isAnswering = true;
     const q = questions[currentQuestion];
     let correctLetter = null;
     for (let l of answerOrder) {
@@ -92,23 +125,34 @@ function chooseAnswer(letter) {
     for (let l of answerOrder) {
         document.getElementById('ans'+l).classList.remove('correct','wrong');
     }
+    // Pause background and play feedback sound; mark intro as consumed
+    stopAllBackground();
+    introPlayed = true;
     if (letter === correctLetter) {
         document.getElementById('ans'+letter).classList.add('correct');
-        setTimeout(()=>{
+        try {
+            sndCorrect.currentTime = 0;
+            sndCorrect.play().catch(()=>{});
+        } catch(e){}
+        sndCorrect.onended = ()=>{
             currentQuestion++;
+            isAnswering = false;
             showQuestion();
-        }, 900);
+        };
     } else {
         document.getElementById('ans'+letter).classList.add('wrong');
         document.getElementById('ans'+correctLetter).classList.add('correct');
-        setTimeout(()=>{
+        try {
+            sndWrong.currentTime = 0;
+            sndWrong.play().catch(()=>{});
+        } catch(e){}
+        sndWrong.onended = ()=>{
+            isAnswering = false;
             document.getElementById('game').innerHTML = `
                 <h2>Грешен отговор!<br>Верният беше: ${correctLetter}<br>Твоята награда: ${currentQuestion>0?prizes[currentQuestion-1]:0} евро</h2>
                 <button class='retry-btn' onclick='restartGame()'>Опитай пак</button>
             `;
-        }, 1200);
-    // Рестартира играта (глобална функция)
-    
+        };
     }
 }
 function restartGame() {
