@@ -79,7 +79,7 @@ function shuffle(arr) {
 
 function showQuestion() {
     if (currentQuestion >= questions.length) {
-        document.getElementById('game').innerHTML = `<h2>Поздравления! Спечели ${prizes[prizes.length-1]} евро! 🎉</h2>`;
+        document.getElementById('game').innerHTML = `<h2>Herzlichen Glückwunsch! Du hast ${prizes[prizes.length-1]} € gewonnen! 🎉</h2>`;
         return;
     }
     const q = questions[currentQuestion];
@@ -93,7 +93,7 @@ function showQuestion() {
         html += `<span class='prize${i===currentQuestion?' active':''}${i<currentQuestion?' done':''}'>${prizes[i]}€</span>`;
     }
     html += `</div>`;
-    html += `<div class='question'><b>Въпрос ${currentQuestion+1}:</b> ${q.question}</div>`;
+    html += `<div class='question'><b>Frage ${currentQuestion+1}:</b> ${q.question}</div>`;
     html += `<div class='answers'>`;
     for (let i = 0; i < 4; i++) {
         const letter = answerOrder[i];
@@ -102,10 +102,10 @@ function showQuestion() {
     html += `</div>`;
     html += `<div class='jokers'>
         <button onclick='jokerFifty()' ${usedJokers.fifty?'disabled':''}>50:50</button>
-        <button onclick='jokerPub1()' ${usedJokers.pub1?'disabled':''}>Помощ от приятел</button>
-        <button onclick='jokerPub2()' ${usedJokers.pub2?'disabled':''}>Помощ публиката</button>
+        <button onclick='jokerPub1()' ${usedJokers.pub1?'disabled':''}>Telefonjoker</button>
+        <button onclick='jokerPub2()' ${usedJokers.pub2?'disabled':''}>Publikumsjoker</button>
     </div>`;
-    html += `<div class='status'>Награда: <b>${prizes[currentQuestion]} евро</b></div>`;
+    html += `<div class='status'>Gewinn: <b>${prizes[currentQuestion]} €</b></div>`;
     document.getElementById('game').innerHTML = html;
     // Ensure letsplay background runs after intro has played
     if (introPlayed) {
@@ -149,8 +149,8 @@ function chooseAnswer(letter) {
         sndWrong.onended = ()=>{
             isAnswering = false;
             document.getElementById('game').innerHTML = `
-                <h2>Грешен отговор!<br>Верният беше: ${correctLetter}<br>Твоята награда: ${currentQuestion>0?prizes[currentQuestion-1]:0} евро</h2>
-                <button class='retry-btn' onclick='restartGame()'>Опитай пак</button>
+                <h2>Falsche Antwort!<br>Richtig war: ${correctLetter}<br>Dein Gewinn: ${currentQuestion>0?prizes[currentQuestion-1]:0} €</h2>
+                <button class='retry-btn' onclick='restartGame()'>Nochmal versuchen</button>
             `;
         };
     }
@@ -178,7 +178,7 @@ function jokerFifty() {
         document.getElementById('ans'+l).disabled = true;
         document.getElementById('ans'+l).classList.add('disabled');
     }
-    showJokerMsg('50:50', 'Два грешни отговора са премахнати!');
+    showJokerMsg('50:50', 'Zwei falsche Antworten wurden entfernt!');
 }
 
 function jokerPub1() {
@@ -189,7 +189,7 @@ function jokerPub1() {
     for (let l of answerOrder) {
         if (q.answers[l] === q.answers[q.correct_answer]) correctLetter = l;
     }
-    showJokerMsg('Помощ от публика', `Мисля че верния отговор е <b>${correctLetter}</b>`);
+    showJokerMsg('Publikumsmeinung', `Ich denke, die richtige Antwort ist <b>${correctLetter}</b>`);
 }
 
 function jokerPub2() {
@@ -211,7 +211,7 @@ function jokerPub2() {
     perc[correctLetter] = rest;
     // Сортирай по проценти
     let sorted = [...answerOrder].sort((a,b)=>perc[b]-perc[a]);
-    let html = `<b>Диаграма на публиката:</b><div class='audience-chart'>`;
+    let html = `<b>Publikumsdiagramm:</b><div class='audience-chart'>`;
     for (let l of sorted) {
         let barColor = l === correctLetter ? '#4caf50' : '#2196f3';
         html += `

@@ -1,222 +1,409 @@
 [
   {
-    "question": "Кой е най-големия планета в нашата слънчева система?",
-    "correct_answer": "А",
-    "difficulty": "лесно",
-    "answers": {
-      "А": "Юпитер",
-      "Б": "Сатурн",
-      "В": "Нептун",
-      "Г": "Земя"
-    }
-  },
-  {
-    "question": "В коя страна се намират пирамидите в Гиза?",
-    "correct_answer": "В",
-    "difficulty": "средно",
-    "answers": {
-      "А": "Ирак",
-      "Б": "Судан",
-      "В": "Египет",
-      "Г": "Саудитска Арабия"
-    }
-  },
-  {
-    "question": "Кой е авторът на 'Война и мир'?",
-    "correct_answer": "А",
-    "difficulty": "средно",
-    "answers": {
-      "А": "Лев Толстой",
-      "Б": "Федор Достоевски",
-      "В": "Александър Пушкин",
-      "Г": "Максим Горки"
-    }
-  },
-  {
-    "question": "Колко kontinenта има на Земята?",
-    "correct_answer": "Б",
-    "difficulty": "средно",
-    "answers": {
-      "А": "5",
-      "Б": "7",
-      "В": "6",
-      "Г": "8"
-    }
-  },
-  {
-    "question": "Какво е химичния символ на магнезия?",
-    "correct_answer": "В",
-    "difficulty": "средно",
-    "answers": {
-      "А": "Mn",
-      "Б": "Mg",
-      "В": "Mg",
-      "Г": "Ma"
-    }
-  },
-  {
-    "question": "В коя година е открита Америка?",
-    "correct_answer": "Г",
-    "difficulty": "трудно",
-    "answers": {
-      "А": "1500",
-      "Б": "1490",
-      "В": "1495",
-      "Г": "1492"
-    }
-  },
-  {
-    "question": "Кой е първия президент на САЩ?",
-    "correct_answer": "А",
-    "difficulty": "трудно",
-    "answers": {
-      "А": "Джордж Вашингтон",
-      "Б": "Томас Джефърсън",
-      "В": "Абрахам Линкълн",
-      "Г": "Франклин Д. Рузвелт"
-    }
-  },
-  {
-    "question": "Кое е най-голямото море на Земята?",
-    "correct_answer": "Б",
-    "difficulty": "средно",
-    "answers": {
-      "А": "Карибско море",
-      "Б": "Филипински море",
-      "В": "Коралово море",
-      "Г": "Средиземно море"
-    }
-  },
-  {
-    "question": "Колко страни има Европейския съюз?",
-    "correct_answer": "В",
-    "difficulty": "лесно",
-    "answers": {
-      "А": "25",
-      "Б": "26",
-      "В": "27",
-      "Г": "28"
-    }
-  },
-  {
-    "question": "Кой е най-дългия река в света?",
-    "correct_answer": "А",
-    "difficulty": "лесно",
-    "answers": {
-      "А": "Нил",
-      "Б": "Амазонка",
-      "В": "Янцзъ",
-      "Г": "Мисисипи"
-    }
-  },
-  {
-    "question": "В коя година е паднала Берлинската стена?",
-    "correct_answer": "Г",
-    "difficulty": "трудно",
-    "answers": {
-      "А": "1988",
-      "Б": "1991",
-      "В": "1989",
-      "Г": "1989"
-    }
-  },
-  {
-    "question": "Кое е най-малката страна в света?",
-    "correct_answer": "А",
-    "difficulty": "лесно",
-    "answers": {
-      "А": "Ватиканския град",
-      "Б": "Монако",
-      "В": "Лихтенщайн",
-      "Г": "Сан Марино"
-    }
-  },
-  {
-    "question": "Кой е изобретателя на електрическата крушка?",
-    "correct_answer": "Б",
-    "difficulty": "трудно",
-    "answers": {
-      "А": "Никола Тесла",
-      "Б": "Томас Едисон",
-      "В": "Александър Белл",
-      "Г": "Майкъл Фарадей"
-    }
-  },
-  {
-    "question": "Колко е броя на зъбите при възрастен човек?",
-    "correct_answer": "В",
-    "difficulty": "средно",
-    "answers": {
-      "А": "28",
-      "Б": "30",
-      "В": "32",
-      "Г": "34"
-    }
-  },
-  {
-    "question": "В коя година е началото на Втората световна война?",
-    "correct_answer": "А",
-    "difficulty": "лесно",
-    "answers": {
-      "А": "1939",
-      "Б": "1940",
-      "В": "1938",
-      "Г": "1941"
-    }
-  },
-  {
-    "question": "Кой е най-високият връх в света?",
-    "correct_answer": "А",
-    "difficulty": "лесно",
-    "answers": {
-      "А": "Еверест",
-      "Б": "Килиманджаро",
-      "В": "Монблан",
-      "Г": "Елбрус"
-    }
-  },
-  {
-    "question": "Кой е създателят на теорията на относителността?",
+    "question": "Wie heißt die Hauptstadt von Deutschland?",
     "correct_answer": "Б",
     "difficulty": "лесно",
     "answers": {
-      "А": "Исак Нютон",
-      "Б": "Алберт Айнщайн",
-      "В": "Стивън Хокинг",
-      "Г": "Галилео Галилей"
+      "А": "München",
+      "Б": "Berlin",
+      "В": "Hamburg",
+      "Г": "Frankfurt"
     }
   },
   {
-    "question": "Коя е столицата на Канада?",
+    "question": "Wie viele Bundesländer hat Deutschland?",
     "correct_answer": "В",
-    "difficulty": "средно",
+    "difficulty": "лесно",
     "answers": {
-      "А": "Торонто",
-      "Б": "Монреал",
-      "В": "Отава",
-      "Г": "Ванкувър"
+      "А": "10",
+      "Б": "12",
+      "В": "16",
+      "Г": "20"
     }
   },
   {
-    "question": "Кой е химичният символ на златото?",
+    "question": "Welche Farben hat die deutsche Flagge?",
+    "correct_answer": "Б",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Blau-Weiß-Rot",
+      "Б": "Schwarz-Rot-Gold",
+      "В": "Grün-Weiß-Rot",
+      "Г": "Gelb-Blau-Weiß"
+    }
+  },
+  {
+    "question": "Welche Stadt hat die meisten Einwohner?",
     "correct_answer": "Г",
     "difficulty": "лесно",
     "answers": {
-      "А": "Ag",
-      "Б": "Fe",
-      "В": "Zn",
-      "Г": "Au"
+      "А": "München",
+      "Б": "Köln",
+      "В": "Hamburg",
+      "Г": "Berlin"
     }
   },
   {
-    "question": "Кой български владетел приема християнството като официална религия?",
+    "question": "Wie viele Einwohner hat Deutschland?",
+    "correct_answer": "В",
+    "difficulty": "средно",
+    "answers": {
+      "А": "Circa 62 Millionen",
+      "Б": "Circa 72 Millionen",
+      "В": "Circa 83 Millionen",
+      "Г": "Circa 92 Millionen"
+    }
+  },
+  {
+    "question": "Wo steht das Brandenburger Tor?",
+    "correct_answer": "А",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "In Berlin",
+      "Б": "In Bremen",
+      "В": "In Stuttgart",
+      "Г": "In Leipzig"
+    }
+  },
+  {
+    "question": "Welches Bundesland hat die größte Fläche?",
+    "correct_answer": "В",
+    "difficulty": "средно",
+    "answers": {
+      "А": "Niedersachsen",
+      "Б": "Baden-Württemberg",
+      "В": "Bayern",
+      "Г": "Nordrhein-Westfalen"
+    }
+  },
+  {
+    "question": "Wie viele Staaten grenzen an Deutschland?",
     "correct_answer": "Б",
+    "difficulty": "средно",
+    "answers": {
+      "А": "8 Staaten",
+      "Б": "9 Staaten",
+      "В": "10 Staaten",
+      "Г": "7 Staaten"
+    }
+  },
+  {
+    "question": "Wie viele Jahre war Deutschland geteilt?",
+    "correct_answer": "Б",
+    "difficulty": "средно",
+    "answers": {
+      "А": "21",
+      "Б": "41",
+      "В": "51",
+      "Г": "31"
+    }
+  },
+  {
+    "question": "Wann begann der Mauerbau?",
+    "correct_answer": "В",
+    "difficulty": "средно",
+    "answers": {
+      "А": "1949",
+      "Б": "1973",
+      "В": "1961",
+      "Г": "1945"
+    }
+  },
+  {
+    "question": "In welchem Jahr wurde Deutschland wiedervereinigt?",
+    "correct_answer": "А",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "1990",
+      "Б": "1989",
+      "В": "1991",
+      "Г": "1992"
+    }
+  },
+  {
+    "question": "Wann fiel die Berliner Mauer?",
+    "correct_answer": "Б",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "1987",
+      "Б": "1989",
+      "В": "1991",
+      "Г": "1995"
+    }
+  },
+  {
+    "question": "An welchem Tag feiert Deutschland die Wiedervereinigung?",
+    "correct_answer": "Г",
+    "difficulty": "средно",
+    "answers": {
+      "А": "Am 9. November 1989",
+      "Б": "Am 5. September 1991",
+      "В": "Am 4. Oktober 1990",
+      "Г": "Am 3. Oktober 1990"
+    }
+  },
+  {
+    "question": "Wie heißt der höchste Berg Deutschlands?",
+    "correct_answer": "Г",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Hochwanner",
+      "Б": "Hochfrottspitze",
+      "В": "Feldberg",
+      "Г": "Zugspitze"
+    }
+  },
+  {
+    "question": "Wie oft gewann der deutsche Rekordmeister FC Bayern München die Champions League?",
+    "correct_answer": "А",
+    "difficulty": "средно",
+    "answers": {
+      "А": "Sechsmal",
+      "Б": "Fünfmal",
+      "В": "Viermal",
+      "Г": "Dreimal"
+    }
+  },
+  {
+    "question": "Welche Stadt war vor Berlin die Hauptstadt der Bundesrepublik Deutschland?",
+    "correct_answer": "Б",
+    "difficulty": "средно",
+    "answers": {
+      "А": "Frankfurt am Main",
+      "Б": "Bonn",
+      "В": "München",
+      "Г": "Leipzig"
+    }
+  },
+  {
+    "question": "Hamburg hat mehr Brücken als Amsterdam und Venedig zusammen. Wie viele sind es genau?",
+    "correct_answer": "Г",
     "difficulty": "трудно",
     "answers": {
-      "А": "Крум",
-      "Б": "Борис I",
-      "В": "Симеон Велики",
-      "Г": "Самуил"
+      "А": "Rund 250",
+      "Б": "Rund 1500",
+      "В": "Rund 2500",
+      "Г": "Rund 3000"
+    }
+  },
+  {
+    "question": "In welcher Stadt liegt der größte Hafen Deutschlands?",
+    "correct_answer": "Г",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "In Wismar",
+      "Б": "In Rostock",
+      "В": "In Bremerhaven",
+      "Г": "In Hamburg"
+    }
+  },
+  {
+    "question": "Wie oft wurde Deutschland Fußball-Weltmeister?",
+    "correct_answer": "Б",
+    "difficulty": "средно",
+    "answers": {
+      "А": "Zweimal",
+      "Б": "Viermal",
+      "В": "Dreimal",
+      "Г": "Fünfmal"
+    }
+  },
+  {
+    "question": "Welche Stadt gilt als „Heimat“ von Mercedes-Benz und Porsche?",
+    "correct_answer": "В",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Berlin",
+      "Б": "Ingolstadt",
+      "В": "Stuttgart",
+      "Г": "München"
+    }
+  },
+  {
+    "question": "In welcher Stadt kann man das große BMW-Museum besuchen?",
+    "correct_answer": "В",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Berlin",
+      "Б": "Köln",
+      "В": "München",
+      "Г": "Frankfurt"
+    }
+  },
+  {
+    "question": "Welches Tier ist im Logo von Porsche zu sehen?",
+    "correct_answer": "Б",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Löwe",
+      "Б": "Pferd",
+      "В": "Adler",
+      "Г": "Bär"
+    }
+  },
+  {
+    "question": "Welcher Fluss hat die meisten Kilometer in Deutschland?",
+    "correct_answer": "В",
+    "difficulty": "средно",
+    "answers": {
+      "А": "Die Donau",
+      "Б": "Die Elbe",
+      "В": "Der Rhein",
+      "Г": "Die Isar"
+    }
+  },
+  {
+    "question": "Welches Gemüse wird in Deutschland auf der größten Fläche angebaut?",
+    "correct_answer": "Г",
+    "difficulty": "трудно",
+    "answers": {
+      "А": "Tomaten",
+      "Б": "Karotten",
+      "В": "Spinat",
+      "Г": "Spargel"
+    }
+  },
+  {
+    "question": "Wie heißt der größte Freizeitpark in Deutschland?",
+    "correct_answer": "Б",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Disneyland",
+      "Б": "Europa-Park",
+      "В": "Phantasialand",
+      "Г": "Legoland"
+    }
+  },
+  {
+    "question": "Was kann man im „Englischen Garten“ in München machen?",
+    "correct_answer": "Б",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Skifahren",
+      "Б": "Spazierengehen und Picknick machen",
+      "В": "Ein Flugzeug bauen",
+      "Г": "Englisch lernen"
+    }
+  },
+  {
+    "question": "In welcher Stadt ist das Hauptwerk von Volkswagen?",
+    "correct_answer": "А",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Wolfsburg",
+      "Б": "Berlin",
+      "В": "Stuttgart",
+      "Г": "Frankfurt"
+    }
+  },
+  {
+    "question": "Welcher See ist der größte in Deutschland?",
+    "correct_answer": "В",
+    "difficulty": "средно",
+    "answers": {
+      "А": "Müritz",
+      "Б": "Chiemsee",
+      "В": "Bodensee",
+      "Г": "Tegernsee"
+    }
+  },
+  {
+    "question": "Wie heißt die größte Insel Deutschlands?",
+    "correct_answer": "Б",
+    "difficulty": "средно",
+    "answers": {
+      "А": "Sylt",
+      "Б": "Rügen",
+      "В": "Mainau",
+      "Г": "Fehmarn"
+    }
+  },
+  {
+    "question": "In welchem Meer liegt Rügen, die größte Insel Deutschlands?",
+    "correct_answer": "Г",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Nordsee",
+      "Б": "Mittelmeer",
+      "В": "Rotes Meer",
+      "Г": "Ostsee"
+    }
+  },
+  {
+    "question": "Welche berühmte Sportmarke kommt aus Deutschland?",
+    "correct_answer": "Б",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Nike",
+      "Б": "Adidas",
+      "В": "Reebok",
+      "Г": "Decathlon"
+    }
+  },
+  {
+    "question": "An welche zwei Meere grenzt Deutschland im Norden?",
+    "correct_answer": "Г",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Mittelmeer und Ostsee",
+      "Б": "Atlantik und Pazifik",
+      "В": "Nordsee und Pazifik",
+      "Г": "Nordsee und Ostsee"
+    }
+  },
+  {
+    "question": "Wie heißt der größte Safaripark in Deutschland?",
+    "correct_answer": "А",
+    "difficulty": "трудно",
+    "answers": {
+      "А": "Serengeti-Park Hodenhagen",
+      "Б": "Safariland Stukenbrock",
+      "В": "Wild- und Freizeitpark Klotten",
+      "Г": "Wildpark Lüneburger Heide"
+    }
+  },
+  {
+    "question": "In welchem Gebirge befinden sich die Triberger Wasserfälle, die zu den höchsten Deutschlands zählen?",
+    "correct_answer": "В",
+    "difficulty": "средно",
+    "answers": {
+      "А": "Harz",
+      "Б": "Alpen",
+      "В": "Schwarzwald",
+      "Г": "Thüringer Wald"
+    }
+  },
+  {
+    "question": "Welches Tier ist das offizielle Symbol von Deutschland und im Wappen zu sehen?",
+    "correct_answer": "В",
+    "difficulty": "лесно",
+    "answers": {
+      "А": "Der Bär",
+      "Б": "Der Löwe",
+      "В": "Der Adler",
+      "Г": "Der Wolf"
+    }
+  },
+  {
+    "question": "Wie oft wurde Deutschland Fußball-Europameister?",
+    "correct_answer": "Б",
+    "difficulty": "средно",
+    "answers": {
+      "А": "Viermal",
+      "Б": "Dreimal",
+      "В": "Zweimal",
+      "Г": "Fünfmal"
+    }
+  },
+  {
+    "question": "Wie viele Jahre war Berlin durch die Mauer geteilt?",
+    "correct_answer": "В",
+    "difficulty": "средно",
+    "answers": {
+      "А": "12 Jahre",
+      "Б": "40 Jahre",
+      "В": "28 Jahre",
+      "Г": "35 Jahre"
     }
   }
 ]

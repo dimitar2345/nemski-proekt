@@ -7,7 +7,7 @@ from pathlib import Path
 class MillionaireGame:
     def __init__(self, root):
         self.root = root
-        self.root.title("Кой искa да бъде милионер?")
+        self.root.title("Wer wird Millionär?")
         self.root.geometry("900x700")
         self.root.configure(bg="#1a1a1a")
         
@@ -46,18 +46,18 @@ class MillionaireGame:
                 self.questions = json.load(f)
             
             if len(self.questions) < 15:
-                messagebox.showerror("Грешка", "Трябват поне 15 въпроса в questions.json!")
+                messagebox.showerror("Fehler", "Es werden mindestens 15 Fragen in questions.json benötigt!")
                 self.root.quit()
             
-            # Разбъркване на въпросите
+            # Shuffle questions
             random.shuffle(self.questions)
             self.questions = self.questions[:15]
         
         except FileNotFoundError:
-            messagebox.showerror("Грешка", "Файлът questions.json не е намерен!")
+            messagebox.showerror("Fehler", "Die Datei questions.json wurde nicht gefunden!")
             self.root.quit()
         except json.JSONDecodeError:
-            messagebox.showerror("Грешка", "Файлът questions.json е невалиден!")
+            messagebox.showerror("Fehler", "Die Datei questions.json ist ungültig!")
             self.root.quit()
     
     def setup_ui(self):
@@ -66,15 +66,15 @@ class MillionaireGame:
         prize_frame = tk.Frame(self.root, bg="#1a1a1a")
         prize_frame.pack(pady=10)
         
-        tk.Label(prize_frame, text="НАГРАДИ", font=("Arial", 12, "bold"), 
-                fg="#FFD700", bg="#1a1a1a").pack()
+        tk.Label(prize_frame, text="PREISE", font=("Arial", 12, "bold"), 
+            fg="#FFD700", bg="#1a1a1a").pack()
         
         self.prize_labels = {}
         for i, prize in enumerate(self.prizes):
             fg_color = "#FFD700" if i == 0 else "#FFFFFF"
             self.prize_labels[i] = tk.Label(
                 prize_frame, 
-                text=f"{i+1}. {prize} евро",
+                text=f"{i+1}. {prize} €",
                 font=("Arial", 9),
                 fg=fg_color,
                 bg="#1a1a1a"
@@ -121,8 +121,8 @@ class MillionaireGame:
         joker_frame = tk.Frame(self.root, bg="#1a1a1a")
         joker_frame.pack(pady=10)
         
-        tk.Label(joker_frame, text="ЖОКЕРИ:", font=("Arial", 11, "bold"), 
-                fg="#FFD700", bg="#1a1a1a").pack()
+        tk.Label(joker_frame, text="JOKER:", font=("Arial", 11, "bold"), 
+            fg="#FFD700", bg="#1a1a1a").pack()
         
         buttons_frame = tk.Frame(joker_frame, bg="#1a1a1a")
         buttons_frame.pack()
@@ -139,7 +139,7 @@ class MillionaireGame:
         
         self.joker_public_1_btn = tk.Button(
             buttons_frame,
-            text="Помощ публика 1",
+            text="Publikumsjoker 1",
             font=("Arial", 9),
             command=self.use_public_help_1,
             width=15,
@@ -149,7 +149,7 @@ class MillionaireGame:
         
         self.joker_public_2_btn = tk.Button(
             buttons_frame,
-            text="Помощ публика 2",
+            text="Publikumsjoker 2",
             font=("Arial", 9),
             command=self.use_public_help_2,
             width=15,
@@ -170,7 +170,7 @@ class MillionaireGame:
     def show_question(self):
         """Показва текущия въпрос"""
         if self.current_question >= len(self.questions):
-            messagebox.showinfo("Поздравления!", f"Спечели си 100,000 евро! 🎉")
+            messagebox.showinfo("Herzlichen Glückwunsch!", f"Du hast 100.000 € gewonnen! 🎉")
             self.root.quit()
             return
         
@@ -205,7 +205,7 @@ class MillionaireGame:
         
         # Актуализирай статус
         prize = self.prizes[self.current_question]
-        self.status_label.config(text=f"Въпрос {self.current_question + 1}/15 | Наградa: {prize} евро")
+        self.status_label.config(text=f"Frage {self.current_question + 1}/15 | Gewinn: {prize} €")
         
         # Отключи жокерите ако са налични
         self.joker_50_btn.config(state=tk.NORMAL if self.jokers['50:50'] else tk.DISABLED)
@@ -234,24 +234,24 @@ class MillionaireGame:
                 self.answer_buttons[letter].config(bg="#8a2a2a")
         
         if answer == correct_letter:
-            messagebox.showinfo("Вярно!", f"Верния отговор е {correct_letter}!\nНаградa: {self.prizes[self.current_question]} евро")
+            messagebox.showinfo("Richtig!", f"Die richtige Antwort ist {correct_letter}!\nGewinn: {self.prizes[self.current_question]} €")
             self.current_question += 1
             self.show_question()
         else:
             messagebox.showerror(
-                "Грешно!",
-                f"Съжалявам, грешния отговор.\nВерния отговор е {correct_letter}!\n\nТвоята наградa е: {self.prizes[self.current_question - 1] if self.current_question > 0 else 0} евро"
+                "Falsch!",
+                f"Leider falsche Antwort.\nDie richtige Antwort ist {correct_letter}!\n\nDein Gewinn: {self.prizes[self.current_question - 1] if self.current_question > 0 else 0} €"
             )
             self.root.quit()
     
     def use_fifty_fifty(self):
         """50:50 жокер - премахва два грешни отговора"""
         if not self.jokers['50:50']:
-            messagebox.showwarning("Жокер", "Вече използова този жокер!")
+            messagebox.showwarning("Joker", "Diesen Joker hast du bereits verwendet!")
             return
         
         if self.fifty_fifty_active:
-            messagebox.showwarning("Жокер", "50:50 е вече активен за този въпрос!")
+            messagebox.showwarning("Joker", "50:50 ist bereits für diese Frage aktiv!")
             return
         
         correct = self.questions[self.current_question]['correct_answer']
@@ -278,12 +278,12 @@ class MillionaireGame:
         
         self.jokers['50:50'] = False
         self.joker_50_btn.config(state=tk.DISABLED)
-        messagebox.showinfo("50:50", "Два грешни отговора са премахнати!")
+        messagebox.showinfo("50:50", "Zwei falsche Antworten wurden entfernt!")
     
     def use_public_help_1(self):
         """Помощ от публика 1 - съобщение с предположение"""
         if not self.jokers['public_help_1']:
-            messagebox.showwarning("Жокер", "Вече използова този жокер!")
+            messagebox.showwarning("Joker", "Diesen Joker hast du bereits verwendet!")
             return
         
         correct = self.questions[self.current_question]['correct_answer']
@@ -296,8 +296,8 @@ class MillionaireGame:
                 break
         
         messagebox.showinfo(
-            "Мнение на публиката",
-            f"Мисля че верния отговор е {correct_letter}"
+            "Publikumsmeinung",
+            f"Ich denke, die richtige Antwort ist {correct_letter}"
         )
         
         self.jokers['public_help_1'] = False
@@ -306,7 +306,7 @@ class MillionaireGame:
     def use_public_help_2(self):
         """Помощ от публика 2 - диаграма с проценти"""
         if not self.jokers['public_help_2']:
-            messagebox.showwarning("Жокер", "Вече използова този жокер!")
+            messagebox.showwarning("Joker", "Diesen Joker hast du bereits verwendet!")
             return
         
         correct = self.questions[self.current_question]['correct_answer']
@@ -331,13 +331,13 @@ class MillionaireGame:
         
         percentages[correct_letter] = 100 - sum(percentages.values())
         
-        message = "Диаграма на мнението на публиката:\n\n"
+        message = "Publikumsdiagramm:\n\n"
         sorted_answers = sorted(percentages.items(), key=lambda x: x[1], reverse=True)
         for letter, percent in sorted_answers:
             bar = "█" * (percent // 5)
             message += f"{letter}: {bar} {percent}%\n"
         
-        messagebox.showinfo("Диаграма на публиката", message)
+        messagebox.showinfo("Publikumsdiagramm", message)
         
         self.jokers['public_help_2'] = False
         self.joker_public_2_btn.config(state=tk.DISABLED)
